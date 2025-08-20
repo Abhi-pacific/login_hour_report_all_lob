@@ -69,6 +69,7 @@ if raw_login and raw_advisor_File_data:
     data['Follow Up'] = data['Follow Up'].astype(str).str.split('days').str[1]
     data['Productive (Avail+Follow Up)'] = data['Productive (Avail+Follow Up)'].astype(str).str.split('days').str[1]
     data['Production (Avail+FollowUP+Tea+Lunch)'] = data['Production (Avail+FollowUP+Tea+Lunch)'].astype(str).str.split('days').str[1]
+    data['Date'] = data['Date'].astype(str).str.split(' ').str[0]
 
     # reseting the index
     data.reset_index(drop=True,inplace=True)

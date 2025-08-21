@@ -24,7 +24,7 @@ if raw_login and raw_advisor_File_data:
     raw_login_1 = pd.ExcelFile(raw_login,engine='openpyxl')
     raw_advisor_File_data_1 = pd.ExcelFile(raw_advisor_File_data,engine='openpyxl')
     
-    data = raw_login_1.parse('Main File')
+    data = raw_login_1.parse('Sheet1')
     data_list = raw_advisor_File_data_1.parse('Sheet1')
     
 

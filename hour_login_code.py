@@ -55,12 +55,8 @@ if raw_login and raw_advisor_File_data:
     data['TEA_BREAK'] = pd.to_timedelta(data['TEA_BREAK'])
 
 
-    data['CareManager Available'] = data['AVAILABLE'].apply(
-        lambda t: pd.Timedelta(hours=t.hour, minutes=t.minute, seconds=t.second) if pd.notnull(t) else pd.NaT
-    )
-    data['Follow Up'] = data['FOLLOW_UP'].apply(
-        lambda t: pd.Timedelta(hours=t.hour, minutes=t.minute, seconds=t.second) if pd.notnull(t) else pd.NaT
-    )
+    data['CareManager Available'] = pd.to_timedelta(data['AVAILABLE'])
+    data['Follow Up'] = pd.to_timedelta(data['FOLLOW_UP'])
 
     data['Productive (Avail+Follow Up)'] = data['CareManager Available'] + data['Follow Up']
 
